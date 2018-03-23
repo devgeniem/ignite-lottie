@@ -1,5 +1,11 @@
 #  React Native Lottie Demo
 
+## Lottie?
+
+[Lottie](https://airbnb.design/lottie/) is an iOS, Android, and React Native library that renders After Effects animations in real time, allowing apps to use animations as easily as they use static images.
+
+Free Lottie JSON files for testing etc. you can find e.g. [LottieFiles](https://www.lottiefiles.com/)
+
 ## How to Setup
 
 **Step 1:** clone this repo and go to cloned repo `cd ignite-lottie`
