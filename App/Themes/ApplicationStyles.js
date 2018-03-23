@@ -24,8 +24,11 @@ const ApplicationStyles = {
       backgroundColor: Colors.transparent
     },
     section: {
-      margin: Metrics.section,
-      padding: Metrics.baseMargin
+      flex: 1,
+      width: 300,
+      height: 170,
+      margin: Metrics.section
+      /*padding: Metrics.baseMargin*/
     },
     sectionText: {
       ...Fonts.style.normal,

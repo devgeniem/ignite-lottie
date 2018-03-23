@@ -19,14 +19,22 @@
 ## How to create Lottie animations?
 
 You need [Adobe After Effects](https://www.adobe.com/fi/products/aftereffects.html) and [Bodymovin](https://github.com/airbnb/lottie-web) extension for it.
+
 Beginners guide to getting started, you can find e.g. https://www.appcoda.com/lottie-beginner-guide/
 
 ## Basic Lottie usage example in React Native components
 
 ```javascript
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View, Animated, Easing } from 'react-native'
+
+// React Native helpers for handling animation
+import { Animated, Easing } from 'react-native'
+
+// Component to show Lottie animation
 import LottieView from 'lottie-react-native'
+
+// Import lottie animations
+import lottieAnimation from '../path/to/files/lottieAnimation.json'
 
 export default class LaunchScreen extends Component {
   constructor(props) {
@@ -46,10 +54,12 @@ export default class LaunchScreen extends Component {
 
   render () {
     return (
-      <LottieView source={require('../path/to/files/lottieAnimation.json')} progress={this.state.progress} />
+      <LottieView source={lottieAnimation} progress={this.state.progress} />
     )
   }
 }
 ```
 
-In this demo, Lottie JSON data are located to `App/Images/Animations`.
+In this demo, Lottie JSON data is located to `App/Images/Animations`.
+
+Shortly, you control your Lottie behaviour in your React Native app with [Animated library](https://facebook.github.io/react-native/docs/animated.html) and [Easing module](https://facebook.github.io/react-native/docs/easing.html).
