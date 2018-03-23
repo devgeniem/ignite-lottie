@@ -16,7 +16,12 @@
     * Run Genymotion
     * run `react-native run-android`
 
-## Basic Lottie usage example in components
+## How to create Lottie animations?
+
+You need [Adobe After Effects](https://www.adobe.com/fi/products/aftereffects.html) and [Bodymovin](https://github.com/airbnb/lottie-web) extension for it.
+Beginners guide to getting started, you can find e.g. https://www.appcoda.com/lottie-beginner-guide/
+
+## Basic Lottie usage example in React Native components
 
 ```javascript
 import React, { Component } from 'react'
@@ -47,4 +52,4 @@ export default class LaunchScreen extends Component {
 }
 ```
 
-In this demo Lottie json data are located to `App/Images/Animations`.
+In this demo, Lottie JSON data are located to `App/Images/Animations`.
