@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View } from 'react-native'
+import { ScrollView, Text, Image, View, Animated, Easing } from 'react-native'
+import LottieView from 'lottie-react-native'
 import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 
 import { Images } from '../Themes'
@@ -8,6 +9,21 @@ import { Images } from '../Themes'
 import styles from './Styles/LaunchScreenStyles'
 
 export default class LaunchScreen extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: new Animated.Value(0),
+    }
+  }
+
+  componentDidMount() {
+    Animated.timing(this.state.progress, {
+      toValue: 1,
+      duration: 5000,
+      easing: Easing.linear,
+    }).start()
+  }
+
   render () {
     return (
       <View style={styles.mainContainer}>
@@ -16,6 +32,8 @@ export default class LaunchScreen extends Component {
           <View style={styles.centered}>
             <Image source={Images.launch} style={styles.logo} />
           </View>
+
+          <LottieView source={require('../Images/Animations/whys.json')} progress={this.state.progress} />
 
           <View style={styles.section} >
             <Image source={Images.ready} />
