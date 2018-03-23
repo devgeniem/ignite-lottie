@@ -1,12 +1,12 @@
 #  React Native Lottie Demo
 
-## :arrow_up: How to Setup
+## How to Setup
 
 **Step 1:** clone this repo and go to cloned repo `cd ignite-lottie`
 
 **Step 2:** Install the Application with `yarn` or `npm i`
 
-## :arrow_forward: How to Run App
+## How to Run App
 
 1. cd to the repo
 2. Run Build for either OS
@@ -16,29 +16,35 @@
     * Run Genymotion
     * run `react-native run-android`
 
-## :closed_lock_with_key: Secrets
+## Basic Lottie usage example in components
 
-This project uses [react-native-config](https://github.com/luggit/react-native-config) to expose config variables to your javascript code in React Native. You can store API keys
-and other sensitive information in a `.env` file:
+```javascript
+import React, { Component } from 'react'
+import { ScrollView, Text, Image, View, Animated, Easing } from 'react-native'
+import LottieView from 'lottie-react-native'
 
+export default class LaunchScreen extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      progress: new Animated.Value(0),
+    }
+  }
+
+  componentDidMount() {
+    Animated.timing(this.state.progress, {
+      toValue: 1,
+      duration: 5000,
+      easing: Easing.linear,
+    }).start()
+  }
+
+  render () {
+    return (
+      <LottieView source={require('../path/to/files/lottieAnimation.json')} progress={this.state.progress} />
+    )
+  }
+}
 ```
-API_URL=https://myapi.com
-GOOGLE_MAPS_API_KEY=abcdefgh
-```
 
-and access them from React Native like so:
-
-```
-import Secrets from 'react-native-config'
-
-Secrets.API_URL  // 'https://myapi.com'
-Secrets.GOOGLE_MAPS_API_KEY  // 'abcdefgh'
-```
-
-The `.env` file is ignored by git keeping those secrets out of your repo.
-
-### Get started:
-1. Copy .env.example to .env
-2. Add your config variables
-3. Follow instructions at [https://github.com/luggit/react-native-config#setup](https://github.com/luggit/react-native-config#setup)
-4. Done!
+In this demo Lottie json data are located to `App/Images/Animations`.
