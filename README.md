@@ -36,7 +36,7 @@ import LottieView from 'lottie-react-native'
 // Import lottie animations
 import lottieAnimation from '../path/to/files/lottieAnimation.json'
 
-export default class LaunchScreen extends Component {
+export default class AnimatedComponentExample extends Component {
   constructor(props) {
     super(props)
     this.state = {
